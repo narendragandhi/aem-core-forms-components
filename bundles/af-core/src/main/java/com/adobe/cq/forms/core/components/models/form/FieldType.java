@@ -42,7 +42,8 @@ public enum FieldType {
     RANGE("range"),
     COLOR("color"),
     URL("url"),
-    HIDDEN("hidden");
+    HIDDEN("hidden"),
+    DATA_TABLE("data-table");
 
     private String value;
 

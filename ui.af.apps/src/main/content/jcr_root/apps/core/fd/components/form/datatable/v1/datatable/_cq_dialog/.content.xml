@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  ~ Copyright 2022 Adobe
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Edit Data Table"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    extraClientlibs="[core.forms.components.base.v1.editor,core.forms.components.datatable.v1.editor]"
+    trackingFeature="core-components:adaptiveform-datatable:v1">
+    <content
+        jcr:primaryType="nt:unstructured"
+        granite:class="cmp-adaptiveform-datatable__editdialog"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <basic
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Basic"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        active="{Boolean}true"
+                        selected="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <name
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Name"
+                                                name="./name"
+                                                required="{Boolean}true">
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    node-name-validation=""/>
+                                            </name>
+                                            <title
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Title"
+                                                name="./jcr:title"/>
+                                            <description
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                                fieldLabel="Description"
+                                                name="./description"/>
+                                            <visible
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                fieldLabel="Visible"
+                                                name="./visible"
+                                                checked="{Boolean}true"/>
+                                            <enabled
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                fieldLabel="Enabled"
+                                                name="./enabled"
+                                                checked="{Boolean}true"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </basic>
+                    <datasource
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Data Source"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <dataSourceType
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                fieldLabel="Data Source Type"
+                                                name="./dataSourceType">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <inline
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Inline JSON"
+                                                        value="inline"/>
+                                                    <url
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="URL"
+                                                        value="url"/>
+                                                </items>
+                                            </dataSourceType>
+                                            <dataSource
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                                fieldLabel="Data Source"
+                                                fieldDescription="Enter JSON data (for inline) or URL (for url type)"
+                                                name="./dataSource"
+                                                required="{Boolean}true"
+                                                rows="10"/>
+                                            <refreshInterval
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                                fieldLabel="Refresh Interval (seconds)"
+                                                fieldDescription="Auto-refresh interval in seconds (0 = disabled)"
+                                                name="./refreshInterval"
+                                                min="0"
+                                                value="0"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </datasource>
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Columns"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <columns
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                                fieldLabel="Column Configuration (JSON)"
+                                                fieldDescription="JSON array of column definitions. Leave empty to auto-detect from data."
+                                                name="./columns"
+                                                rows="10"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </columns>
+                    <views
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Views"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <viewConfig
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                                fieldLabel="View Configuration (JSON)"
+                                                fieldDescription="JSON object defining multiple views with column visibility"
+                                                name="./viewConfig"
+                                                rows="10"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </views>
+                    <advanced
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Advanced"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <height
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Height"
+                                                fieldDescription="Table height (CSS value, e.g., 300px, 50vh)"
+                                                name="./height"
+                                                value="300px"/>
+                                            <pagination
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                fieldLabel="Enable Pagination"
+                                                name="./pagination"
+                                                checked="{Boolean}true"/>
+                                            <pageSize
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                                fieldLabel="Page Size"
+                                                fieldDescription="Number of rows per page"
+                                                name="./pageSize"
+                                                min="1"
+                                                value="10"/>
+                                            <sortable
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                fieldLabel="Enable Sorting"
+                                                name="./sortable"
+                                                checked="{Boolean}true"/>
+                                            <filterable
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                fieldLabel="Enable Filtering"
+                                                name="./filterable"
+                                                checked="{Boolean}true"/>
+                                            <resizableColumns
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                fieldLabel="Resizable Columns"
+                                                name="./resizableColumns"
+                                                checked="{Boolean}true"/>
+                                            <selectableRows
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                fieldLabel="Selectable Rows"
+                                                name="./selectableRows"
+                                                checked="{Boolean}false"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </advanced>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>
+

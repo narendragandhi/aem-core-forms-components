@@ -1,0 +1,67 @@
+{
+  "datatable" : {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType" : "core/fd/components/form/datatable/v1/datatable",
+    "name" : "dataTable1",
+    "jcr:title" : "Data Table",
+    "fieldType": "data-table",
+    "dataSource" : "[{\"id\":1,\"name\":\"John\",\"age\":30}]",
+    "dataSourceType" : "inline",
+    "height" : "300px",
+    "pagination" : true,
+    "pageSize" : 10,
+    "sortable" : true,
+    "filterable" : true,
+    "resizableColumns" : true,
+    "selectableRows" : false,
+    "refreshInterval" : 0
+  },
+  "datatable-customized" : {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType" : "core/fd/components/form/datatable/v1/datatable",
+    "name" : "dataTable2",
+    "jcr:title" : "Custom Data Table",
+    "fieldType": "data-table",
+    "description" : "This is a customized data table",
+    "visible" : true,
+    "enabled" : true,
+    "dataSource" : "[{\"id\":1,\"name\":\"John Doe\",\"age\":30,\"email\":\"john@example.com\"},{\"id\":2,\"name\":\"Jane Smith\",\"age\":25,\"email\":\"jane@example.com\"}]",
+    "dataSourceType" : "inline",
+    "columns" : "[{\"field\":\"id\",\"title\":\"ID\",\"width\":100},{\"field\":\"name\",\"title\":\"Name\",\"width\":200},{\"field\":\"age\",\"title\":\"Age\",\"width\":100}]",
+    "viewConfig" : "{\"default\":{\"columns\":[\"id\",\"name\",\"age\"]},\"detailed\":{\"columns\":[\"id\",\"name\",\"age\",\"email\"]}}",
+    "height" : "400px",
+    "pagination" : true,
+    "pageSize" : 5,
+    "sortable" : true,
+    "filterable" : true,
+    "resizableColumns" : true,
+    "selectableRows" : true,
+    "refreshInterval" : 0
+  },
+  "datatable-url-source" : {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType" : "core/fd/components/form/datatable/v1/datatable",
+    "name" : "dataTable3",
+    "jcr:title" : "URL Data Source Table",
+    "fieldType": "data-table",
+    "dataSource" : "https://api.example.com/data",
+    "dataSourceType" : "url",
+    "height" : "300px",
+    "pagination" : true,
+    "pageSize" : 10,
+    "sortable" : true,
+    "filterable" : true,
+    "resizableColumns" : true,
+    "selectableRows" : false,
+    "refreshInterval" : 60
+  },
+  "datatable-without-fieldtype" : {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType" : "core/fd/components/form/datatable/v1/datatable",
+    "name" : "dataTable4",
+    "jcr:title" : "Data Table Without Field Type",
+    "dataSource" : "[{\"id\":1,\"name\":\"Test\"}]",
+    "dataSourceType" : "inline"
+  }
+}
+

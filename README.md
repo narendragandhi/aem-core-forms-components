@@ -19,6 +19,16 @@ See [AEM Sites Core Components](https://docs.adobe.com/content/help/en/experienc
 
 https://opensource.adobe.com/aem-core-forms-components/
 
+## Developer Documentation
+
+For developers looking to create or extend AEM Forms Core Components:
+
+- **[Component Development Guide](COMPONENT_DEVELOPMENT_GUIDE.md)**: Comprehensive guide for understanding and creating new form components
+- **[Architecture Overview](ARCHITECTURE_OVERVIEW.md)**: Detailed architecture documentation covering system design, data flow, and component lifecycle
+- **[Quick Reference](QUICK_REFERENCE.md)**: Quick reference guide with templates and common patterns
+- **[Component Specification Template](COMPONENT_SPECIFICATION_TEMPLATE.md)**: Template for creating component specifications
+- **[Guidelines](Guidelines.md)**: Component checklist and best practices
+
 ## Available Components
 
 ### Page Authoring Components
